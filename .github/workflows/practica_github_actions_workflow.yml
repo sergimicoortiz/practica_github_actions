@@ -17,8 +17,8 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: cypress-io/github-action@v5
+        id: cypress
         with:
           start: npm run dev
-          working-directory: ./result.txt
-          quiet: true
-      - run: ls -la
+          wait-on: "http://localhost:3000"
+      - run: ${{ steps.cypress.outcome }}
