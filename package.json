@@ -7,7 +7,7 @@
     "export": "next export",
     "lint": "next lint",
     "cypress": "cypress open",
-    "test": "cypress run"
+    "test": "cypress run --quiet"
   },
   "dependencies": {
     "next": "latest",
