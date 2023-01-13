@@ -6,7 +6,7 @@ describe("Test de endpoints", () => {
   before(() => {
     cy.visit("/");
     cy.request("DELETE", "api/users", {}).then((response) => {
-      expect(response.body).to.have.property("message", `All users deleted`);
+      expect(response.body).to.have.property("message", "All users deleted");
     });
   });
 
@@ -36,7 +36,7 @@ describe("Test de endpoints", () => {
   after(() => {
     cy.visit("/");
     cy.request("DELETE", "api/users", {}).then((response) => {
-      expect(response.body).to.have.property("message", `All users deleted`);
+      expect(response.body).to.have.property("message", "All users deleted");
     });
   });
 });
