@@ -62,3 +62,22 @@ jobs:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.ORG_ID}}
           vercel-project-id: ${{ secrets.PROJECT_ID}}
+
+  Notification_job:
+    runs-on: ubuntu-latest
+    needs: [Linter_job, Cypress_job, Add_badge_job, Deploy_job]
+    if: ${{ always() }}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/download-artifact@v3
+        with:
+          name: results
+      - run: echo "::set-output name=cypress_outcome::$(cat results.txt)"
+        id: save_results
+      - uses: ./.github/actions/email
+        with:
+          linter_job: ${{ needs.Linter_job.result }}
+          cypress_job: ${{ steps.save_results.outputs.cypress_outcome }}
+          add_badge_job: ${{ needs.Add_badge_job.result }}
+          deploy_job: ${{ needs.Deploy_job.result }}
+          email: ${{ secrets.EMAIL }}

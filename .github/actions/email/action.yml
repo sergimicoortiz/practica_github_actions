@@ -1,0 +1,21 @@
+name: email
+description: "Send an email with the job results"
+inputs:
+  linter_job:
+    description: "Linter job results"
+    required: true
+  cypress_job:
+    description: "Cypress job results"
+    required: true
+  add_badge_job:
+    description: "Badge job results"
+    required: true
+  deploy_job:
+    description: "Deploy job results"
+    required: true
+  email:
+    description: "Email to send the results"
+    required: true
+runs:
+  using: "node16"
+  main: "dist/index.js"
