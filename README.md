@@ -1,4 +1,5 @@
 # Practica final eslint
+https://practica-github-actions-sergimicoortiz.vercel.app/
 
 ## Eslint:
 
@@ -30,6 +31,6 @@ Para este job he creado un custom action que recibiendo como entrada el resultad
 
 <img src='./pic/Captura de pantalla 2023-01-14 144326.png' />
 
-En este job el step del  *checkout* recibe una llave preivada ssh para que el step *EndBug/add-and-commit* pueda realizar el push al repositorio.
+En este job el step del *checkout* recibe una llave privada ssh para que el step *EndBug/add-and-commit* pueda realizar el push al repositorio. Ademas añadimos *[skip actions]* al mensaje del commit para que este no active nuevamente las actions.
 
 <img src='./pic/Captura de pantalla 2023-01-14 144242.png' />
