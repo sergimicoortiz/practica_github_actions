@@ -18,3 +18,11 @@ He añadido el job al workflow, debemos de ponerle id al step del cypress para m
 
 <img src='./pic/Captura de pantalla 2023-01-13 204718.png' />
 <img src='./pic/Captura de pantalla 2023-01-13 204754.png' />
+
+## Badge:
+
+RESULTADO DE LOS ÚLTIMOS TESTS:
+<!-- NO CAMBIAR LA URL DE FORMA MANUAL. -->
+<img src='https://img.shields.io/badge/test-failure-red'/>
+
+Para este job he creado un custom action que recibiendo como entrada 

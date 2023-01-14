@@ -37,4 +37,8 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: results
-      - run: cat results.txt
+      - run: echo "::set-output name=cypress_outcome::$(cat result.txt)"
+        id: save_results
+      - uses: ./.github/actions/badge
+        with:
+          cypress_results: ${{ steps.save_results.outputs.cypress_outcome }}
