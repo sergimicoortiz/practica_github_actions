@@ -1,5 +1,4 @@
 # Practica final eslint
-https://practica-github-actions-sergimicoortiz.vercel.app/
 
 ## Eslint:
 
@@ -31,6 +30,20 @@ Para este job he creado un custom action que recibiendo como entrada el resultad
 
 <img src='./pic/Captura de pantalla 2023-01-14 144326.png' />
 
-En este job el step del *checkout* recibe una llave privada ssh para que el step *EndBug/add-and-commit* pueda realizar el push al repositorio. Ademas añadimos *[skip actions]* al mensaje del commit para que este no active nuevamente las actions.
+En este job el step del *checkout* recibe una llave privada ssh para que el step *EndBug/add-and-commit* pueda realizar el push al repositorio. Además añadimos *[skip actions]* al mensaje del commit para que este no active nuevamente las actions.
 
 <img src='./pic/Captura de pantalla 2023-01-14 144242.png' />
+
+## Deploy:
+
+URL de la web:
+https://practica-github-actions-sergimicoortiz.vercel.app/
+
+Para este job me he registrado en la web de vercel y he generado un proyecto.
+
+<img src='./pic/Captura de pantalla 2023-01-14 152000.png' />
+
+En el job de Deploy_job simplemente he realizado un *checkout* y luego he utilizado la action de vercel a la cual le he pasado un token que he generado en vercel junto a mi ID de usuario y el ID del proyecto, todo esto en secretos del repositorio. En la propia configuración del proyecto en la web de vercel se especifica que framework se está utilizando para que la propia vercel realice el build del proyecto.
+
+<img src='./pic/Captura de pantalla 2023-01-14 152517.png'/>
+<img src='./pic/Captura de pantalla 2023-01-14 152526.png'/>

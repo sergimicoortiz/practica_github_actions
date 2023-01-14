@@ -57,10 +57,8 @@ jobs:
     needs: Cypress_job
     steps:
       - uses: actions/checkout@v3
-      - run: npm install -D && npm run build
       - uses: amondnet/vercel-action@v19
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.ORG_ID}}
           vercel-project-id: ${{ secrets.PROJECT_ID}}
-          working-directory: ./.next
