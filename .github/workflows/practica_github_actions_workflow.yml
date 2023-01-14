@@ -34,6 +34,9 @@ jobs:
     needs: Cypress_job
     steps:
       - uses: actions/checkout@v3
+        with:
+          ssh-key: ${{secrets.SSH_KEY}}
+          ssh-strict: false
       - uses: actions/download-artifact@v3
         with:
           name: results
@@ -42,3 +45,9 @@ jobs:
       - uses: ./.github/actions/badge
         with:
           cypress_results: ${{ steps.save_results.outputs.cypress_outcome }}
+      - uses: EndBug/add-and-commit@v9
+        with:
+          add: "."
+          author_name: "Workflow practica_github_actions"
+          message: "Cypress results updated [skip actions]"
+          push: true

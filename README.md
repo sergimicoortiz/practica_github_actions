@@ -23,6 +23,13 @@ He añadido el job al workflow, debemos de ponerle id al step del cypress para m
 
 RESULTADO DE LOS ÚLTIMOS TESTS:
 <!-- NO CAMBIAR LA URL DE FORMA MANUAL. -->
+<!-- SI ES NECESARIO CAMBIAR LA IMAGEN DEL BADGED DEBERAS DE HACERLO EN LA ACTION LOCALIZADA EN .github\actions\badge\index.js -->
 <img src='https://img.shields.io/badge/test-failure-red'/>
 
-Para este job he creado un custom action que recibiendo como entrada 
+Para este job he creado un custom action que recibiendo como entrada el resultado de los tests de cypress y modifica el README dependiendo de estos.
+
+<img src='./pic/Captura de pantalla 2023-01-14 144326.png' />
+
+En este job el step del  *checkout* recibe una llave preivada ssh para que el step *EndBug/add-and-commit* pueda realizar el push al repositorio.
+
+<img src='./pic/Captura de pantalla 2023-01-14 144242.png' />
