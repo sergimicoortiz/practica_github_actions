@@ -24,7 +24,7 @@ He añadido el job al workflow, debemos de ponerle id al step del cypress para m
 RESULTADO DE LOS ÚLTIMOS TESTS:
 <!-- NO CAMBIAR LA URL DE FORMA MANUAL. -->
 <!-- SI ES NECESARIO CAMBIAR LA IMAGEN DEL BADGED DEBERAS DE HACERLO EN LA ACTION LOCALIZADA EN .github\actions\badge\index.js -->
-<img src='https://img.shields.io/badge/test-failure-red'/>
+<img src='https://img.shields.io/badge/tested%20with-Cypress-04C38E.svg'/>
 
 Para este job he creado un custom action que recibiendo como entrada el resultado de los tests de cypress y modifica el README dependiendo de estos.
 
