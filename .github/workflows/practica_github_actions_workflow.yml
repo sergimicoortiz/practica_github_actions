@@ -41,4 +41,4 @@ jobs:
         id: save_results
       - uses: ./.github/actions/badge
         with:
-          cypress_results: ${{ steps.save_results.outputs.cypress_outcome }}
+          cypress_results: ${{needs.Add_badge_job.outputs.cypress_outcome}}
