@@ -81,3 +81,5 @@ jobs:
           add_badge_job: ${{ needs.Add_badge_job.result }}
           deploy_job: ${{ needs.Deploy_job.result }}
           email: ${{ secrets.EMAIL }}
+          mailtrap_user: ${{ secrets.MAILTRAP_USER }}
+          mailtrap_pass: ${{ secrets.MAILTRAP_PASS }}

@@ -16,6 +16,12 @@ inputs:
   email:
     description: "Email to send the results"
     required: true
+  mailtrap_user:
+    description: "Mailtrap user"
+    required: true
+  mailtrap_pass:
+    description: "Mailtrap password"
+    required: true
 runs:
   using: "node16"
   main: "dist/index.js"

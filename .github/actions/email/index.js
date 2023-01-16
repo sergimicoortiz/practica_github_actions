@@ -1,26 +1,66 @@
+"use strict";
+const nodemailer = require("nodemailer");
 const core = require('@actions/core');
+require('dotenv').config();
+async function main() {
 
-try {
-    const linter_job = core.getInput('linter_job');
-    const cypress_job = core.getInput('cypress_job');
-    const add_badge_job = core.getInput('add_badge_job');
-    const deploy_job = core.getInput('deploy_job');
-    const DESTINATARIO = core.getInput('email');
+    try {
+        const linter_job = core.getInput('linter_job') || 'empty';
+        const cypress_job = core.getInput('cypress_job') || 'empty';
+        const add_badge_job = core.getInput('add_badge_job') || 'empty';
+        const deploy_job = core.getInput('deploy_job') || 'empty';
+        const mailtrap_user = core.getInput('mailtrap_user');
+        const mailtrap_pass = core.getInput('mailtrap_pass');
+        const DESTINATARIO = core.getInput('email');
 
-    const ASUNTO = 'Resultado del workflow ejecutado';
-    const BODY = `
-    Se ha realizado un push en la rama main que ha provocado la ejecución del
-    workflow nombre_repositorio_workflow con los siguientes resultados:
-
-        - linter_job: ${linter_job}
-        - cypress_job: ${cypress_job}
-        - add_badge_job: ${add_badge_job}
-        - deploy_job: ${deploy_job}`;
-
-    console.log(BODY);
+        const ASUNTO = 'Resultado del workflow ejecutado';
+        const BODY = `
+        <div>
+        <p>Se ha realizado un push en la rama master que ha provocado la ejecución del
+            workflow practica_github_actions_workflow con los siguientes resultados:</p>
     
-    process.exit(0);
+        <ul>
+            <li>
+                linter_job: ${linter_job}
+            </li>
+            <li>
+                cypress_job: ${cypress_job}
+            </li>
+            <li>
+                add_badge_job: ${add_badge_job}
+            </li>
+            <li>
+                deploy_job: ${deploy_job}
+            </li>
+        </ul>
+    </div>`;
 
-} catch (error) {
-    core.setFailed(error);
+        const transporter = nodemailer.createTransport({
+            host: "smtp.mailtrap.io",
+            port: 2525,
+            auth: {
+                user: mailtrap_user,
+                pass: mailtrap_pass
+            }
+        });
+
+        const email = {
+            from: '"Sergi Micó" <sergimicoortiz@gmail>',
+            to: DESTINATARIO,
+            subject: ASUNTO,
+            html: BODY,
+        }
+
+        const send_email = await transporter.sendMail(email);
+        console.log("Message sent: %s", send_email.messageId);
+        process.exit(0);
+
+    } catch (error) {
+        console.log(error);
+        core.setFailed(error);
+    }
+
+
 }
+
+main();
