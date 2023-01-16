@@ -1,7 +1,6 @@
 "use strict";
 const nodemailer = require("nodemailer");
 const core = require('@actions/core');
-require('dotenv').config();
 async function main() {
 
     try {
