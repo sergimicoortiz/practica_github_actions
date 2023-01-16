@@ -1,5 +1,9 @@
 # Practica final eslint
 
+# Introdución teorica
+
+GitHub Actions son una característica de GitHub que permite automatizar el flujo de trabajo de desarrollo. Con ellas, puedes crear "acciones" que se activan cuando se producen eventos específicos en tu repositorio de GitHub. Estas acciones pueden realizar tareas como compilar código, probarlo, implementarlo en un servidor, entre otras. En resumen, ayudan a automatizar tareas repetitivas y a mejorar el flujo de trabajo de desarrollo.
+
 ## Eslint:
 
 He creado el workflow con un job llamado Linter_job el cual instala las dependencias del proyecto y ejecuta npm run lint.
@@ -47,3 +51,18 @@ En el job de Deploy_job simplemente he realizado un *checkout* y luego he utiliz
 
 <img src='./pic/Captura de pantalla 2023-01-14 152517.png'/>
 <img src='./pic/Captura de pantalla 2023-01-14 152526.png'/>
+
+## Notification
+
+Primero he creado la custom action que envía el correo. Utilizo *Mailtrap* para enviar los correos.
+
+<img src='./pic/email.png'/>
+
+Luego he creado el job usuando la action anterior al cual le paso como parámetros de entrado tanto el estado de los jobs como el usuario y contraseña de Mailtrap además de el email al cual le queremos mandar el correo.
+
+<img src='./pic/Screenshot_20230116_165917.png'/>
+<img src='./pic/Screenshot_20230116_164508.png'/>
+<img src='./pic/Screenshot_20230116_164536.png'/>
+
+## README personal:
+
