@@ -15961,10 +15961,10 @@ const core = __nccwpck_require__(2186);
 async function main() {
 
     try {
-        const linter_job = core.getInput('linter_job') || 'empty';
-        const cypress_job = core.getInput('cypress_job') || 'empty';
-        const add_badge_job = core.getInput('add_badge_job') || 'empty';
-        const deploy_job = core.getInput('deploy_job') || 'empty';
+        const linter_job = core.getInput('linter_job') || 'skipped';
+        const cypress_job = core.getInput('cypress_job') || 'skipped';
+        const add_badge_job = core.getInput('add_badge_job') || 'skipped';
+        const deploy_job = core.getInput('deploy_job') || 'skipped';
         const mailtrap_user = core.getInput('mailtrap_user');
         const mailtrap_pass = core.getInput('mailtrap_pass');
         const DESTINATARIO = core.getInput('email');

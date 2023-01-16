@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import Head from "next/head";
 import Img from "next/image";
 
 export default function Home() {
