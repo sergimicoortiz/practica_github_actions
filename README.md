@@ -66,7 +66,7 @@ Luego he creado el job usuando la action anterior al cual le paso como parámetr
 
 ## README Metrics:
 
-He generado un token en github, el cual he usado el el workflow.
+He generado un token en github, el cual he usado este workflow.
 
 <img src='./pic/Screenshot_20230116_211250.png'/>
 <img src='./pic/Screenshot_20230116_211640.png'/>
