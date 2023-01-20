@@ -66,12 +66,12 @@ Luego he creado el job usuando la action anterior al cual le paso como parámetr
 
 ## README Metrics:
 
-He generado un token en github, el cual he usado este workflow.
+He generado un token en github, el cual he usado en este workflow.
 
 <img src='./pic/Screenshot_20230116_211250.png'/>
 <img src='./pic/Screenshot_20230116_211640.png'/>
 
-El workflow genera un svg el cual debeos de poner en el README.md
+El workflow genera un svg el cual debes de poner en el README.md
 
 <img src='./pic/Screenshot_20230116_211229.png'/>
 <img src='./pic/Screenshot_20230116_211137.png'/>
